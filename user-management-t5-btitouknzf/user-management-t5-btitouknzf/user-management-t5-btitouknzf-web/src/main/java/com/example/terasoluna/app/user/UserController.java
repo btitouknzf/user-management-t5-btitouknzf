@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.example.terasoluna.domain.model.SearchResult;
 import com.example.terasoluna.domain.model.UserSearchInfo;
 import com.example.terasoluna.domain.model.UserSearchResultInfo;
 import com.example.terasoluna.domain.service.shared.UserSearchResultInfoSharedService;
@@ -30,6 +31,9 @@ public class UserController {
 	
 	@Inject
 	UserSearchResultInfoSharedService userSearchResultInfoSharedService;
+	
+	@Inject
+	SearchResult searchResult;
 	
 	@ModelAttribute(value = "searchForm")
 	public SearchForm setUpSearchForm(){
@@ -62,8 +66,10 @@ public class UserController {
 		
 		UserControllerHelper userControllerHelper = new UserControllerHelper();
 		
-		Collection<UserSearchResultInfo> resultInfo = userSearchResultInfoSharedService.findSearchResult(userControllerHelper.makeUserSearchInfo(form));
-		model.addAttribute("resultInfo",resultInfo);
+		searchResult.setUsersearchResultInfo(userSearchResultInfoSharedService.findSearchResult(userControllerHelper.makeUserSearchInfo(form)));
+		
+		/* Collection<UserSearchResultInfo> resultInfo = userSearchResultInfoSharedService.findSearchResult(userControllerHelper.makeUserSearchInfo(form)); */
+		model.addAttribute("resultInfo",searchResult.getUserSearchResultInfo());
 		return "user/searchList";
 	}
 	
@@ -76,6 +82,7 @@ public class UserController {
 			Collection<UserSearchResultInfo> resultInfo = userSearchResultInfoSharedService.findSearchResult(userControllerHelper.makeUserSearchInfo(form));
 			model.addAttribute("resultInfo",resultInfo);
 			*/
+			model.addAttribute("resultInfo",searchResult.getUserSearchResultInfo());
 			return "user/searchList";
 		}
 		
