@@ -1,0 +1,51 @@
+user-management-t5-btitouknzf-domain
+    „¤„Ÿ„Ÿ src
+        „¤„Ÿ„Ÿ main
+             „¥„Ÿ„Ÿ java
+             „    „¤„Ÿ„Ÿ com
+             „        „¤„Ÿ„Ÿ example
+             „            „¤„Ÿ„Ÿ terasoluna
+             „                „¤„Ÿ„Ÿ domain
+             „                    „¥„Ÿ„Ÿ model
+             „                    „   „¥„Ÿ„Ÿ Role.java  ... (2)
+             „                    „   „¥„Ÿ„Ÿ User.java  ... (3)
+             „                    „   „¥„Ÿ„Ÿ JobControl.java  ... (3)
+             „                    „   „¥„Ÿ„Ÿ 
+             „                    „   „¥„Ÿ„Ÿ 
+             „                    „   „¤„Ÿ„Ÿ 
+             „                    „¥„Ÿ„Ÿ repository  ... (5)
+             „                    „   „¥„Ÿ„Ÿ account
+             „                    „   „   „¤„Ÿ„Ÿ AccountRepository.java
+             „                    „   „¥„Ÿ„Ÿ goods
+             „                    „   „   „¤„Ÿ„Ÿ GoodsRepository.java
+             „                    „   „¤„Ÿ„Ÿ order
+             „                    „       „¤„Ÿ„Ÿ OrderRepository.java
+             „                    „¤„Ÿ„Ÿ service  ... (6)
+             „                        „¥„Ÿ„Ÿ account
+             „                        „   „¤„Ÿ„Ÿ AccountService.java
+             „                        „¥„Ÿ„Ÿ goods
+             „                        „   „¤„Ÿ„Ÿ GoodsService.java
+             „                        „¥„Ÿ„Ÿ order
+             „                        „   „¥„Ÿ„Ÿ EmptyCartOrderException.java
+             „                        „   „¥„Ÿ„Ÿ InvalidCartOrderException.java
+             „                        „   „¤„Ÿ„Ÿ OrderService.java
+             „                        „¤„Ÿ„Ÿ userdetails
+             „                            „¥„Ÿ„Ÿ AccountDetails.java
+             „                            „¤„Ÿ„Ÿ AccountDetailsService.java
+             „¤„Ÿ„Ÿ resources
+                  „¥„Ÿ„Ÿ com
+                  „   „¤„Ÿ„Ÿ example
+                  „       „¤„Ÿ„Ÿ session
+                  „           „¤„Ÿ„Ÿ domain
+                  „               „¤„Ÿ„Ÿ repository  ... (7)
+                  „                   „¥„Ÿ„Ÿ account
+                  „                   „   „¤„Ÿ„Ÿ AccountRepository.xml
+                  „                   „¥„Ÿ„Ÿ goods
+                  „                   „   „¤„Ÿ„Ÿ GoodsRepository.xml
+                  „                   „¤„Ÿ„Ÿ order
+                  „                       „¤„Ÿ„Ÿ OrderRepository.xml
+                  „¤„Ÿ„Ÿ META-INF
+                       „¥„Ÿ„Ÿ dozer
+                       „   „¤„Ÿ„Ÿ order-mapping.xml  ... (8)
+                       „¤„Ÿ„Ÿ spring
+                           „¤„Ÿ„Ÿ session-tutorial-init-codelist.xml  ... (9)

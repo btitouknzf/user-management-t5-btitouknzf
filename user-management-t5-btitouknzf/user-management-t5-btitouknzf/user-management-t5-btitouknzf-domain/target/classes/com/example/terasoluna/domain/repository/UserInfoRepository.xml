@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+    "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.terasoluna.domain.repository.UserInfoRepository">
+
+	<resultMap id="userInfoResultMap" type="UserInfo">
+        <id property="userId" column="userid" />
+        <result property="username" column="username" />
+        <result property="birthday" column="birthday" />
+        <result property="address" column="address" />
+        <result property="tellphone" column="tellphone" />
+        <result property="password" column="password" />
+        <result property="state" column="state" />
+        <result property="updatedate" column="updatedate" />
+    </resultMap>
+
+    <select id="findOne" parameterType="string" resultMap="userInfoResultMap">
+    <![CDATA[
+        SELECT
+            userid,
+			username,
+			birthday,
+			address,
+			tellphone,
+			password,
+			state,
+			updatedate
+        FROM
+            t_userinfo 
+        WHERE
+            userid = #{userid}
+        AND
+        	state 
+        NOT IN
+        	(2)
+    ]]>
+    </select>
+
+	<update id="passwordUpdate" parameterType="UserInfo">
+	<![CDATA[
+		UPDATE t_userinfo SET
+			password = #{password},
+			state = #{state},
+			updatedate = #{updatedate}
+		WHERE
+			userid = #{userId}
+	]]>
+	</update>
+
+<!-- 
+	<update id="passwordUpdate" >
+    <![CDATA[
+    	UPDATE
+    		t_userinfo
+    	SET
+    		password = #{passWord},
+    		state = #{state},
+    		updatedate = #{updateDate}
+    	WHERE
+            userid = #{userId}
+    ]]>
+    </update>
+ -->
+</mapper>

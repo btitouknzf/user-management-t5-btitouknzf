@@ -1,0 +1,42 @@
+t_account
+CREATE TABLE t_account(
+	userid		VARCHAR(36) PRIMARY KEY,
+	username 	VARCHAR(255),
+	birthday 	DATE,
+	address 	VARCHAR(255),
+	tellphone 	VARCHAR(11),
+	password 	VARCHAR(255),
+	state 		INT,
+	updatedate 	DATETIME
+);
+
+
+
+
+INSERT into t_account values('0001','apple','1991-1-1','“Œ‹“s]“Œ‹æ–LFl’š–Ú1-1','0312345678','$2a$10$oxSJl.keBwxmsMLkcT9lPeAIxfNTPNQxpeywMrF7A3kVszwUTqfTK',1,'2015-6-2 14:29:00');
+INSERT into t_account values('0002','orange','1992-2-2','“Œ‹“s’†‰›‹æŒ“‡ˆê’š–Ú3-9','0387654321','$2a$10$oxSJl.keBwxmsMLkcT9lPeAIxfNTPNQxpeywMrF7A3kVszwUTqfTK',1,'2015-6-3 14:29:00');
+INSERT into t_account values('0003','banana','1993-3-3','“Œ‹“s’†‰›‹æ’z’nˆê’š–Ú1-1','09012345678','$2a$10$oxSJl.keBwxmsMLkcT9lPeAIxfNTPNQxpeywMrF7A3kVszwUTqfTK',1,'2015-6-4 14:29:00');
+INSERT into t_account values('0004','peach','1994-4-4','“Œ‹“s’†‰›‹æ‹âÀˆê’š–Ú7-12','09087654321','$2a$10$oxSJl.keBwxmsMLkcT9lPeAIxfNTPNQxpeywMrF7A3kVszwUTqfTK',1,'2015-6-5 14:29:00');
+INSERT into t_account values('0005','pineapple','1995-5-5','“Œ‹“sç‘ã“c‹æ—LŠy’¬ˆê’š–Ú11-1','08012345678','$2a$10$oxSJl.keBwxmsMLkcT9lPeAIxfNTPNQxpeywMrF7A3kVszwUTqfTK',1,'2015-6-6 14:29:00');
+INSERT into t_account values('0006','pear','1996-6-6','“Œ‹“sç‘ã“c‹æ‰à‚ªŠÖ“ñ’š–Ú1-1','08087654321','$2a$10$oxSJl.keBwxmsMLkcT9lPeAIxfNTPNQxpeywMrF7A3kVszwUTqfTK',1,'2015-6-7 14:29:00');
+
+
+t_role
+CREATE TABLE t_role(
+	userid		VARCHAR(36),
+	role		VARCHAR(4),
+	FOREIGN KEY (userid) REFERENCES t_account (userid)
+);
+
+INSERT into t_role values('0001','ADMN')
+INSERT into t_role values('0001','USER')
+INSERT into t_role values('0002','USER')
+INSERT into t_role values('0003','USER')
+INSERT into t_role values('0004','USER')
+INSERT into t_role values('0005','USER')
+INSERT into t_role values('0006','USER')
+INSERT into t_role values('9998','USER')
+INSERT into t_role values('9999','USER')
+
+job_control
+

@@ -1,0 +1,7 @@
+mvn archetype:generate -B^
+ -DarchetypeGroupId=org.terasoluna.gfw.blank^
+ -DarchetypeArtifactId=terasoluna-gfw-multi-web-blank-mybatis3-archetype^
+ -DarchetypeVersion=5.3.0.RELEASE^
+ -DgroupId=com.example.terasoluna^
+ -DartifactId=user-management-t5-btitouknzf^
+ -Dversion=1.0.0-SNAPSHOT
