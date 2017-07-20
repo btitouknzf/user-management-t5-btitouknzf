@@ -24,4 +24,22 @@ public class UserRoleInfoSharedServiceImple implements UserRoleInfoSharedService
 		return userRoleInfoRepository.findRole(userid);
 	}
 
+	@Override
+	public boolean userRoleUpdate(UserRoleInfo userRoleInfo) {
+		// TODO 自動生成されたメソッド・スタブ
+		return userRoleInfoRepository.userRoleUpdate(userRoleInfo);
+	}
+
+	@Override
+	public boolean userRoleDelete(UserRoleInfo userRoleInfo) {
+		// TODO 自動生成されたメソッド・スタブ
+		return userRoleInfoRepository.userRoleDelete(userRoleInfo);
+	}
+
+	@Override
+	public int userRoleCount(String userid) {
+		// TODO 自動生成されたメソッド・スタブ
+		return userRoleInfoRepository.userRoleCount(userid);
+	}
+
 }

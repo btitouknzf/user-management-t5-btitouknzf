@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>chengePassword</title>
+<title>search User</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/app/css/styles.css">
 </head>
@@ -57,13 +57,19 @@
 				</c:forEach>
 			</table>
 			<form:errors path="radioselect" cssErrorClass="error-messages" />
-			<input type="submit" name="update" id="update${status.index}" value="更新" />
-			<input type="submit" name="update" id="delete${status.index}" value="削除" />
+			
+			<sec:authorize access="hasRole('ROLE_ADMIN')">
+				<input type="submit" name="update" id="update" value="更新" />
+				<input type="submit" name="remove" id="remove" value="削除" />
+			</sec:authorize>
+			
+			<input type="submit" id="back" name="backSearch" value="戻る" />
+			<hr>
 			
 		</form:form>
 		</div>
 
-		<hr>
+
 
 		<form:form action="${pageContext.request.contextPath}/logout">
 			<button type="submit">Logout</button>

@@ -1,5 +1,9 @@
 package com.example.terasoluna.app.user;
 
+import org.joda.time.DateTime;
+
+import com.example.terasoluna.domain.model.UserInfo;
+import com.example.terasoluna.domain.model.UserRoleInfo;
 import com.example.terasoluna.domain.model.UserSearchInfo;
 
 public class UserControllerHelper {
@@ -73,4 +77,52 @@ public class UserControllerHelper {
 		
 		return userSearchInfo;
 	}
+	
+	public UserInfo makeUserInfoUpdate(UpdateForm form){
+		UserInfo userInfo = new UserInfo();
+		
+		userInfo.setUserId(form.getUserid());
+		userInfo.setUsername(form.getUsername());
+		userInfo.setBirthday(form.getBirthday());
+		userInfo.setAddress(form.getAddress());
+		userInfo.setTellphone(form.getTellphone());
+		
+		DateTime updatedate = new DateTime();
+		userInfo.setUpdatedate(updatedate);
+		
+		userInfo.setState(0);
+		
+		return userInfo;
+	}
+	
+	public UserInfo makeUserInfoDelete(DeleteForm form){
+		UserInfo userInfo = new UserInfo();
+		
+		userInfo.setUserId(form.getUserid());
+		userInfo.setState(2);
+		
+		DateTime updatedate = new DateTime();
+		userInfo.setUpdatedate(updatedate);
+		
+		return userInfo;
+	}
+	
+	public UserRoleInfo makeUserRoleUpdate(UpdateForm form){
+		UserRoleInfo userRoleInfo = new UserRoleInfo();
+		
+		userRoleInfo.setUserid(form.getUserid());
+		userRoleInfo.setRole(form.getRole());
+		
+		return userRoleInfo;
+	}
+	
+	public UserRoleInfo makeUserRoleDelete(DeleteForm form){
+		UserRoleInfo userRoleInfo = new UserRoleInfo();
+		
+		userRoleInfo.setUserid(form.getUserid());
+		userRoleInfo.setRole(form.getRole());
+		
+		return userRoleInfo;
+	}
+	
 }

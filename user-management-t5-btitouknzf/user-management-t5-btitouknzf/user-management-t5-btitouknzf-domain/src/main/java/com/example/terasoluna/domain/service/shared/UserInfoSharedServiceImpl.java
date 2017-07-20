@@ -38,6 +38,27 @@ public class UserInfoSharedServiceImpl implements UserInfoSharedService {
 		// TODO 自動生成されたメソッド・スタブ
 		return userInfoRepository.passwordUpdate(userInfo);
 	}
+
+
+	@Override
+	public boolean userInfoUpdate(UserInfo userInfo) {
+		// TODO 自動生成されたメソッド・スタブ
+		return userInfoRepository.userInfoUpdate(userInfo);
+	}
+
+
+	@Override
+	public boolean userInfoDelete(String userid) {
+		// TODO 自動生成されたメソッド・スタブ
+		return userInfoRepository.userInfoDelete(userid);
+	}
+
+
+	@Override
+	public boolean userInfoDeleteState(UserInfo userInfo) {
+		// TODO 自動生成されたメソッド・スタブ
+		return userInfoRepository.userInfoDeleteState(userInfo);
+	}
 	
 	/*
 	@Override

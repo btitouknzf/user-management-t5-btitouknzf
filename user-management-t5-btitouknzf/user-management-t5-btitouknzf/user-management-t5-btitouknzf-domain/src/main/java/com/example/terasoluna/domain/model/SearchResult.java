@@ -28,6 +28,10 @@ public class SearchResult implements Serializable {
 		return userSearchResultInfo.values();
 	}
 	
+	public UserSearchResultInfo getSelectUserSearchResultInfo(String selectNum){
+		return userSearchResultInfo.get(selectNum);
+	}
+	
 	public void setUsersearchResultInfo(Collection<UserSearchResultInfo> userSearchResultInfo){
 		
 		int i = 0;

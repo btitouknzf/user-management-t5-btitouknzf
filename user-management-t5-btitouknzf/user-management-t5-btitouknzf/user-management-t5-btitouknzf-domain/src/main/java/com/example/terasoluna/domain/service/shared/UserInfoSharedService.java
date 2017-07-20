@@ -17,4 +17,8 @@ public interface UserInfoSharedService {
 			int state,
 			DateTime updatedate);
 	*/
+	
+	boolean userInfoUpdate(UserInfo userInfo);
+	boolean userInfoDelete(String userid);
+	boolean userInfoDeleteState(UserInfo userInfo);
 }

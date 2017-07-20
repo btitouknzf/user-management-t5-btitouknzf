@@ -21,5 +21,36 @@
             userid = #{userid}
     ]]>
     </select>
-
+	
+	<select id="userRoleCount" parameterType="string" resultType="int" >
+    <![CDATA[
+        SELECT
+        	COUNT(userid)
+        FROM
+            t_userrole
+        WHERE
+            userid = #{userid}
+    ]]>
+    </select>
+	
+	<update id="userRoleUpdate" parameterType="UserRoleInfo">
+	<![CDATA[
+		UPDATE t_userrole SET
+			role = #{role}
+		WHERE
+			userid = #{userid}
+	]]>
+	</update>
+	
+	<delete id="userRoleDelete" parameterType="UserRoleInfo">
+	<![CDATA[
+		DELETE
+			FROM t_userrole
+		WHERE
+			userid = #{userid}
+		AND
+			role = #{role}
+	]]>
+	</delete>
+	
 </mapper>

@@ -49,6 +49,38 @@
 	]]>
 	</update>
 
+	<update id="userInfoUpdate" parameterType="UserInfo">
+	<![CDATA[
+		UPDATE t_userinfo SET
+			username = #{username},
+			birthday = #{birthday},
+			address = #{address},
+			tellphone = #{tellphone},
+			updatedate = #{updatedate}
+		WHERE
+			userid = #{userId}
+	]]>
+	</update>
+	
+	<update id="userInfoDeleteState" parameterType="UserInfo">
+	<![CDATA[
+		UPDATE t_userinfo SET
+			state = #{state},
+			updatedate = #{updatedate}
+		WHERE
+			userid = #{userId}
+	]]>
+	</update>
+	
+	<delete id="userInfoDelete" parameterType="string">
+	<![CDATA[
+		DELETE
+			FROM t_userinfo
+		WHERE
+			userid = #{userId}
+	]]>
+	</delete>
+
 <!-- 
 	<update id="passwordUpdate" >
     <![CDATA[

@@ -15,4 +15,7 @@ public interface UserInfoRepository {
 			@Param("updateDate") DateTime updatedate);
 	*/
 
+	boolean userInfoUpdate(UserInfo userInfo);
+	boolean userInfoDelete(String userid);
+	boolean userInfoDeleteState(UserInfo userInfo);
 }
