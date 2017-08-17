@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <t_userinfo userid="0002" username="orange" birthday="1992-2-2" address="東京都中央区月島一丁目3-9" tellphone="0387654321" password="$2a$10$oxSJl.keBwxmsMLkcT9lPeAIxfNTPNQxpeywMrF7A3kVszwUTqfTK" state="1" updatedate="2015-6-3 14:29:00" />
+  <t_userrole userid="0002" role="USER" />
+</dataset>

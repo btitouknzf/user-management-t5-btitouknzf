@@ -1,0 +1,14 @@
+<!ELEMENT dataset (
+     t_userinfo*,
+     t_userrole*)>
+ 
+<!ELEMENT t_userinfo EMPTY>
+<!ATTLIST t_userinfo
+     COL0 CDATA #IMPLIED
+     COL1 CDATA #REQUIRED
+     COL2 CDATA #IMPLIED >
+ 
+<!ELEMENT t_userrole EMPTY>
+<!ATTLIST t_userrole
+     COL0 CDATA #REQUIRED
+     COL1 CDATA #IMPLIED >

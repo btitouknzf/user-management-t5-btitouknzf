@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>user-management-t5-btitouknzf-domain</artifactId>
+    <packaging>jar</packaging>
+    <parent>
+        <groupId>com.example.terasoluna</groupId>
+        <artifactId>user-management-t5-btitouknzf</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+	
+	<profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <resource.directory>src/main/resources</resource.directory>
+                <buildFinalName>${project.artifactId}-${project.version}</buildFinalName>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>test-server</id>
+            <properties>
+                <resource.directory>${basedir}/configs/test-server/resources</resource.directory>
+                <buildFinalName>${project.artifactId}-${project.version}-test-server</buildFinalName>
+            </properties>
+        </profile>
+        <profile>
+            <id>production-server</id>
+            <properties>
+                <resource.directory>${basedir}/configs/production-server/resources</resource.directory>
+                <buildFinalName>${project.artifactId}-${project.version}-production-server</buildFinalName>
+            </properties>
+        </profile>
+    </profiles>
+	
+    <dependencies>
+        <!-- == Begin TERASOLUNA == -->
+        <dependency>
+            <groupId>org.terasoluna.gfw</groupId>
+            <artifactId>terasoluna-gfw-common-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.terasoluna.gfw</groupId>
+            <artifactId>terasoluna-gfw-jodatime-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.terasoluna.gfw</groupId>
+            <artifactId>terasoluna-gfw-security-core-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+        <!--  REMOVE THIS LINE IF YOU USE JPA
+        <dependency>
+            <groupId>org.terasoluna.gfw</groupId>
+            <artifactId>terasoluna-gfw-jpa-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+              REMOVE THIS LINE IF YOU USE JPA  -->
+        <dependency>
+            <groupId>org.terasoluna.gfw</groupId>
+            <artifactId>terasoluna-gfw-mybatis3-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.terasoluna.gfw</groupId>
+            <artifactId>terasoluna-gfw-recommended-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+        <!-- == End TERASOLUNA == -->
+
+        <!-- == Begin Database == -->
+<!--         <dependency> -->
+<!--             <groupId>org.postgresql</groupId> -->
+<!--             <artifactId>postgresql</artifactId> -->
+<!--             <scope>test</scope> -->
+<!--         </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>com.oracle</groupId> -->
+<!--             <artifactId>ojdbc7</artifactId> -->
+<!--             <scope>test</scope> -->
+<!--         </dependency> -->
+        <!-- == End Database == -->
+
+        <!-- == Begin Unit Test == -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+    		<groupId>org.dbunit</groupId>
+    		<artifactId>dbunit</artifactId>
+    		<version>2.5.3</version>
+		</dependency>
+        <dependency>
+    	<groupId>com.github.springtestdbunit</groupId>
+    		<artifactId>spring-test-dbunit</artifactId>
+    		<version>1.3.0</version>
+    		<scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-el</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+    		<groupId>com.ninja-squad</groupId>
+    		<artifactId>DbSetup</artifactId>
+    		<version>2.1.0</version>
+		</dependency>
+		
+
+		
+        <!-- == End Unit Test == -->
+
+        <!-- == Begin Coding Support == -->
+        <!--
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        -->
+        <!-- == End Coding Support == -->
+
+    </dependencies>
+
+</project>
