@@ -3,7 +3,7 @@ Implementation-Title: user-management-t5-btitouknzf-initdb
 Implementation-Version: 1.0.0-SNAPSHOT
 Built-By: terafw0672
 Implementation-Vendor-Id: com.example.terasoluna
-Build-Jdk: 1.8.0_131
+Build-Jdk: 1.8.0_121
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: TERASOLUNA Framework Team
 
